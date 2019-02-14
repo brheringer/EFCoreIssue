@@ -25,7 +25,8 @@ namespace WebApplication1.Model
 				return true;
 			else return
 				object.Equals(this.PlannedSprintId, outro.PlannedSprintId) &&
-				object.Equals(this.PlannedTaskId, outro.PlannedTaskId);
+				//object.Equals(this.PlannedTaskId, outro.PlannedTaskId);
+				object.Equals(this.PlannedTask, outro.PlannedTask);
 		}
 
 		public override int GetHashCode() {

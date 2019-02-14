@@ -64,5 +64,17 @@ namespace WebApplication1.Controllers
 				txt += item.Id + "," + item.PlannedSprint.Id + "," + item.PlannedTask.Id + ". ";
 			return Ok(txt);
 		}
+
+		[HttpGet]
+		[Route("test2")]
+		public string Test2()
+		{
+			string txt = "";
+			var sprint = dbContext.SprintDbSet.Find(1);
+			txt += sprint.Id + ":";
+			foreach (var item in sprint.SprintBacklog)
+				txt += item.Id + "," + item.PlannedSprint.Id + "," + item.PlannedTask.Id + ". ";
+			return txt;
+		}
 	}
 }
